@@ -10,6 +10,7 @@ export const Tags = () => {
     tags: [],
     tagSelected: null,
   });
+
   return (
     <div>
       {state.tags.map((tag) => {
@@ -17,11 +18,12 @@ export const Tags = () => {
           <button
             key={tag.id}
             onClick={() => {
-              setState((currentState) => ({
+              setState((currentState) :TagState=> ({
                 ...currentState,
                 // @ts-expect-error
-                tagselected: tag.id,
-              }));
+               tagselected: tag.id,
+              
+              }) );
             }}
           >
             {tag.value}
