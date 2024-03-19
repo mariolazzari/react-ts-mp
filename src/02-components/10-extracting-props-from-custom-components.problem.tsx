@@ -3,16 +3,16 @@
 export const NavBar = (props: {
   title: string;
   links: string[];
-  children: React.ReactNode;
+  children: ReactNode;
 }) => {
   return <div>Some content</div>;
 };
 
 // Your app:
-
+import { ComponentProps, ReactNode } from "react";
 import { Equal, Expect } from "../helpers/type-utils";
 
-type NavBarProps = unknown;
+type NavBarProps = ComponentProps<typeof NavBar>;
 
 type test = Expect<
   Equal<
@@ -20,7 +20,7 @@ type test = Expect<
     {
       title: string;
       links: string[];
-      children: React.ReactNode;
+      children: ReactNode;
     }
   >
 >;
